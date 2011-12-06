@@ -7,11 +7,11 @@ require "noodall-components-quicklinks/version"
 Gem::Specification.new do |s|
   s.name        = "noodall-components-quicklinks"
   s.version     = NoodallComponentsQuicklinks::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of NoodallComponentsQuicklinks."
-  s.description = "TODO: Description of NoodallComponentsQuicklinks."
+  s.authors     = ["Jordan Elver"]
+  s.email       = []
+  s.homepage    = "https://github.com/noodall/noodall-components-quicklinks"
+  s.summary     = "A simple list of links component for Noodall"
+  s.description = "A simple list of links component for Noodall"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

@@ -1,0 +1,69 @@
+<%= fields_for :node do |f| %>
+  <%= f.fields_for slot_name, component do |f| %>
+  <%= f.hidden_field :_type %>
+  <%= error_messages_for :object => component %>
+
+  <script id="quicklink-template-<%= slot_name.parameterize %>" type="text/x-jquery-tmpl">
+    <%= render :partial  => 'admin/components/quick_link',
+               :locals => {
+                 :component => component,
+                 :slot_name  => slot_name,
+                 :text => "",
+                 :link => "",
+                 :index => nil
+               }
+    %>
+  </script>
+
+  <p>
+    <%= label_tag "node_#{slot_name}_title", "Title" %><br />
+    <span class="input-wrap"><%= text_field_tag "node[#{slot_name}][title]", component.title, :id => "node_#{slot_name}_title" %></span>
+  </p>
+
+  <div id="quicklinks-<%= slot_name.parameterize %>">
+
+    <% component.quick_links.each_with_index do |quicklink, index| %>
+      <%= render :partial  => 'admin/components/quick_link',
+                 :locals => {
+                   :component => component,
+                   :slot_name  => slot_name,
+                   :text => quicklink.link_text,
+                   :link => quicklink.link,
+                   :index => nil
+                 }
+      %>
+    <% end %>
+
+    <% if component.quick_links.empty? %>
+      <%= render :partial  => 'admin/components/quick_link',
+                 :locals => {
+                   :component => component,
+                   :slot_name  => slot_name,
+                   :text => "",
+                   :link => "",
+                   :index => nil
+                 }
+      %>
+    <% end %>
+  </div>
+
+  <a class="add-quick-link-<%= slot_name.parameterize %>" href="#">Add a quick link</a>
+
+<%
+  end
+end
+%>
+
+<script>
+$('.add-quick-link-<%= slot_name.parameterize %>').unbind('click').click(function() {
+
+  // Get the template HTML
+  var template = $('#quicklink-template-<%= slot_name.parameterize %>').html();
+
+  // Add it
+  var container = $('#quicklinks-<%= slot_name.parameterize %>');
+  container.append(template);
+
+  return false;
+});
+</script>

@@ -5,9 +5,8 @@ end
 
 Given /^place a "([^"]*)" component in a slot$/ do |component_name|
   slot_name = case component_name
-  # Fill in your component and component slot name
-  # when '<component>'
-  #   '<component> Slot'
+  when 'Quick Links'
+   'Small Slot'
   else
     'Large Slot'
   end

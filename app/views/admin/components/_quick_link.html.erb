@@ -1,0 +1,14 @@
+<div class="quick-link" style="background: #eee; margin-bottom: 10px; padding: 10px;">
+  <p>
+    <%= label_tag("node[#{slot_name}][quick_links][#{index}][link_text]", "Link Text") %><br />
+    <span class="input-wrap"><%= text_field_tag "node[#{slot_name}][quick_links][#{index}][link_text]", text, :id => "node_#{slot_name}_quick_links_#{index}_link_text" %></span>
+  </p>
+  <p>
+    <%= label_tag("node[#{slot_name}][quick_links][#{index}][link]", "Link") %><br />
+    <span class="input-wrap">
+      <%= text_field_tag "node[#{slot_name}][quick_links][#{index}][link]", link, :id => "node_#{slot_name}_quick_links_#{index}_link" %><br/>
+      <span class="link-node">Content</span> |
+      <span class="link-asset">Asset</span>
+    </span>
+  </p>
+</div>

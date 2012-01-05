@@ -1,13 +1,8 @@
-<% unless component.quick_links.empty? %>
-
 <div id="<%= slot_code %>" class="component quicklinks <%= additional_classes %>">
+  <h3><%=h component.title %></h3>
   <ul>
     <% component.quick_links.each do |quicklink| %>
-      <li>
-        <%= link_to(quicklink.link_text, quicklink.link) %>
-      </li>
+      <li><%= link_to(quicklink.link_text, quicklink.link) %></li>
     <% end %>
   </ul>
 </div>
-
-<% end %>

@@ -67,7 +67,7 @@ $('.add-quick-link-<%= slot_name.parameterize %>').unbind('click').click(functio
   return false;
 });
 
-$('.remove-quicklink').unbind('click').click(function() {
+$('.remove-quicklink').unbind('click').live('click', function() {
   $(this).parent().parent().remove();
   return false;
 });

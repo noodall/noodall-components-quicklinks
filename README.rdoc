@@ -1,5 +1,0 @@
-= Noodall Quicklinks Component
-
-A simple list of links component for Noodall
-
-This project rocks and uses MIT-LICENSE.

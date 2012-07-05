@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    noodall-components-quicklinks (0.0.1)
+    noodall-components-quicklinks (1.0.0)
       rails (~> 3.1.1)
 
 GEM
